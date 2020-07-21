@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trigger Random</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    #random-number {
+      background-color:white;
+      width:100%;
+      height:auto;
+      padding:15px;
+      color:yellow;
+    }
+
+    #random-number h2 {
+      background-color: lightgray;;
+    }
+
+    #random-number > :nth-child(odd){
+      background-color:whitesmoke;
+      color:red
+    }
+  </style>
+</head>
+<body>
+
+  <div class="jumbotron">
+
+    <h1 class="text-center">Generate a Random Number!</h1>
+
+    <div class="text-center">
+
+      <!-- Here we have our button for generating random numbers (#random-button) -->
+      <button id="random-button" class="btn btn-primary btn-lg"><h1><span class="fa fa-question"></span></h1></button>
+      
+    </div>
+
+  </div>
+
+  <!-- Here we have div called "random-number" where our random number will go -->
+  <h1 class="text-center">YOUR RANDOM NUMBERS</h1>
+  <div class="text-center" id="random-number">
+    
+  </div>
+
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+
+      // CREATE THE MISSING CODE HERE. Your code should add content to the random-number div.
+      // ...
+      
+      $("#random-button").on("click", ()=>{
+        let random = Math.floor(Math.random() * 10);
+        let newElement = $("<h2>");
+        $(newElement).text(random);
+        $("#random-number").prepend(newElement);
+      });
+
+      // ...
+
+    });
+
+  </script>
+  
+</body>
+</html>
